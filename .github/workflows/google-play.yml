@@ -63,7 +63,6 @@ jobs:
           touch $secretJsonFile
           echo "${{ secrets.GOOGLE_PLAY_CREDENTIALS_FILE_ENC }}" >> $secretJsonFileAsc
           gpg -d --passphrase "${{ secrets.GOOGLE_PLAY_CREDENTIALS_FILE_PASSPHRASE }}" --batch $secretJsonFileAsc > $secretJsonFile
-          cat $secretJsonFile 
 
       - name: Set up Ruby
         uses: ruby/setup-ruby@v1
